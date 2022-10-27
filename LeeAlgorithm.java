@@ -3,13 +3,13 @@ import java.util.ArrayList;
 
 public class LeeAlgorithm {
     public static void main(String[] args) {
-        int field[][] = drawField();
+        int[][] field = drawField();
         findPath(5, 0, field);
         printArray(field); 
     }
 
     static void findPath(int startX, int startY, int[][] field) {
-        ArrayList<Integer> storage = new ArrayList<Integer>();
+        ArrayList<Integer> storage = new ArrayList<>();
         storage.add(startX);
         storage.add(startY);
 
@@ -44,7 +44,7 @@ public class LeeAlgorithm {
     }
 
     static int[][] drawField() {
-        int[][] field = new int[][]
+        return new int[][]
         {
             {0, 0,  0,  0,  0,  0,  0, -1, 0},
             {0, 0,  0, -1,  0,  0,  0,  0, 0},
@@ -57,16 +57,15 @@ public class LeeAlgorithm {
             {0, 0,  0,  0,  0,  0, -1,  0, 0},
             {0, 0,  0,  0,  0,  0,  0,  0, 0}
         };
-        return field;
     }
 
     static void printArray(int[][] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-            if (array[i][j] == -1) System.out.print("*" + "\t");
-            else System.out.print(array[i][j] + "\t");
+        for (int[] ints : array) {
+            for (int anInt : ints) {
+                if (anInt == -1) System.out.print("*" + "\t");
+                else System.out.print(anInt + "\t");
             }
-        System.out.println("");
+            System.out.println();
         }
     }
     
