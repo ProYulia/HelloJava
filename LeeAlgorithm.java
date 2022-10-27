@@ -21,23 +21,19 @@ public class LeeAlgorithm {
             storage.remove(0);
 
             if (x < 9 && field[x+1][y] == 0) {
-                storage.add(x+1);
-                storage.add(y);
+                storage.add(x+1); storage.add(y);
                 field[x+1][y] = field[x][y] + 1;
             }
             if (y < 8 && field[x][y+1] == 0) {
-                storage.add(x);
-                storage.add(y+1);
+                storage.add(x); storage.add(y+1);
                 field[x][y+1] = field[x][y] + 1;
             }
             if (x > 0 && field[x-1][y] == 0) {
-                storage.add(x-1);
-                storage.add(y);
+                storage.add(x-1); storage.add(y);
                 field[x-1][y] = field[x][y] + 1;
             }
             if (y > 0 && field[x][y-1] == 0) {
-                storage.add(x);
-                storage.add(y-1);
+                storage.add(x); storage.add(y-1);
                 field[x][y-1] = field[x][y] + 1;
             }
         }
